@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrisel <lgrisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 13:12:31 by lgrisel           #+#    #+#             */
-/*   Updated: 2025/07/15 14:13:18 by lgrisel          ###   ########.fr       */
+/*   Created: 2025/07/15 14:07:34 by lgrisel           #+#    #+#             */
+/*   Updated: 2025/07/15 14:11:10 by lgrisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include <iostream>
+#define IDEA_COUNT 100
 
-class Dog: public Animal
+class Brain
 {
-	public:
-		Dog();
-		Dog(const Dog &copy);
-		~Dog();
+	private:
+		std::string	ideas[IDEA_COUNT];
 
-		Dog		&operator=(const Dog &copy);
-		void	makeSound(void) const;
+	public:
+		Brain(void);
+		Brain(const Brain &copy);
+		~Brain();
+
+		Brain	&operator=(const Brain &copy);
 };

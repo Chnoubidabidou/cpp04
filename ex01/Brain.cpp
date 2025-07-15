@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrisel <lgrisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 13:12:30 by lgrisel           #+#    #+#             */
-/*   Updated: 2025/07/15 14:05:34 by lgrisel          ###   ########.fr       */
+/*   Created: 2025/07/15 14:07:26 by lgrisel           #+#    #+#             */
+/*   Updated: 2025/07/15 14:11:14 by lgrisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-Dog::Dog(void): Animal("Dog")
+Brain::Brain(void)
 {
-	std::cout << "Dog: Default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy): Animal(copy)
+Brain::Brain(const Brain &copy)
 {
-	std::cout << "Dog: Copy constructor called" << std::endl;
+	*this = copy;
 }
 
-Dog::~Dog(void)
+Brain::~Brain(void)
 {
-	std::cout << "Dog: Destructor called" << std::endl;
 }
 
-Dog	&Dog::operator=(const Dog &copy)
+Brain	&Brain::operator=(const Brain &copy)
 {
-	*static_cast<Animal *>(this) = copy;
+	if (this == &copy)
+		return (*this);
+	for (size_t i = 0; i < IDEA_COUNT; i++)
+		ideas[i] = copy.ideas[i];
 	return (*this);
-}
-
-void	Dog::makeSound(void) const
-{
-	std::cout << "Bark !" << std::endl;
 }

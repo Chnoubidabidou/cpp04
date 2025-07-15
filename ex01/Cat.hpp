@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrisel <lgrisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 13:12:31 by lgrisel           #+#    #+#             */
-/*   Updated: 2025/07/15 14:13:18 by lgrisel          ###   ########.fr       */
+/*   Created: 2025/07/15 13:12:29 by lgrisel           #+#    #+#             */
+/*   Updated: 2025/07/15 14:12:20 by lgrisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog: public Animal
+class Cat: public Animal
 {
-	public:
-		Dog();
-		Dog(const Dog &copy);
-		~Dog();
+	private:
+		Brain	*brain;
 
-		Dog		&operator=(const Dog &copy);
+	public:
+		Cat();
+		Cat(const Cat &copy);
+		~Cat();
+
+		Cat		&operator=(const Cat &copy);
 		void	makeSound(void) const;
 };

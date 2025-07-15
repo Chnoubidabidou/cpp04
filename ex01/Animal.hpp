@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrisel <lgrisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 13:12:31 by lgrisel           #+#    #+#             */
-/*   Updated: 2025/07/15 14:13:18 by lgrisel          ###   ########.fr       */
+/*   Created: 2025/07/15 13:11:06 by lgrisel           #+#    #+#             */
+/*   Updated: 2025/07/15 13:33:02 by lgrisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Dog: public Animal
+class Animal
 {
-	public:
-		Dog();
-		Dog(const Dog &copy);
-		~Dog();
+	protected:
+		std::string	type;
 
-		Dog		&operator=(const Dog &copy);
-		void	makeSound(void) const;
+	public:
+		Animal();
+		Animal(const std::string &type);
+		Animal(const Animal &copy);
+		virtual	~Animal();
+
+		Animal	&operator=(const Animal &copy);
+
+		std::string		getType(void) const;
+		virtual void	makeSound() const;
 };

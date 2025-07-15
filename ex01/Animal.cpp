@@ -6,7 +6,7 @@
 /*   By: lgrisel <lgrisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:11:04 by lgrisel           #+#    #+#             */
-/*   Updated: 2025/07/15 14:05:14 by lgrisel          ###   ########.fr       */
+/*   Updated: 2025/07/15 14:06:57 by lgrisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ Animal::~Animal(void)
 
 Animal	&Animal::operator=(const Animal &copy)
 {
+	if (this == &copy)
+		return (*this);
 	this->type = copy.type;
 	return (*this);
 }
